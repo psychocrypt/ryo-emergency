@@ -34,9 +34,9 @@ set(simplewallet_headers)
 set(simplewallet_private_headers
   simplewallet.h)
 
-sumokoin_private_headers(simplewallet
+ryo_private_headers(simplewallet
   ${simplewallet_private_headers})
-sumokoin_add_executable(simplewallet
+ryo_add_executable(simplewallet
   ${simplewallet_sources}
   ${simplewallet_headers}
   ${simplewallet_private_headers})
@@ -60,5 +60,5 @@ add_dependencies(simplewallet
   version)
 set_property(TARGET simplewallet
   PROPERTY
-    OUTPUT_NAME "sumo-wallet-cli")
+    OUTPUT_NAME "ryo-wallet-cli")
 install(TARGETS simplewallet DESTINATION bin)

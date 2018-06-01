@@ -1,3 +1,4 @@
+// Copyright (c) 2018, Ryo-currency
 // Copyright (c) 2014-2017, The Monero Project
 // 
 // All rights reserved.
@@ -106,7 +107,7 @@ public:
    * @brief Gets a DNS address from OpenAlias format
    *
    * If the address looks good, but contains one @ symbol, replace that with a .
-   * e.g. donate@sumokoin.org becomes donate.sumokoin.org
+   * e.g. donate@ryo-currency.com becomes donate.ryo-currency.com
    *
    * @param oa_addr  OpenAlias address
    *

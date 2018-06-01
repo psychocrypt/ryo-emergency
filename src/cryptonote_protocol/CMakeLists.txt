@@ -27,13 +27,13 @@
 # THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 cmake_minimum_required (VERSION 2.6)
-project (sumokoin CXX)
+project (ryo CXX)
 
 file(GLOB CRYPTONOTE_PROTOCOL *)
 source_group(cryptonote_protocol FILES ${CRYPTONOTE_PROTOCOL})
 
-#sumokoin_private_headers(cryptonote_protocol ${CRYPTONOTE_PROTOCOL})
-sumokoin_add_library(cryptonote_protocol ${CRYPTONOTE_PROTOCOL})
+#ryo_private_headers(cryptonote_protocol ${CRYPTONOTE_PROTOCOL})
+ryo_add_library(cryptonote_protocol ${CRYPTONOTE_PROTOCOL})
 target_link_libraries(cryptonote_protocol
   PRIVATE
     ${EXTRA_LIBRARIES})

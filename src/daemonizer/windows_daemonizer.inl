@@ -175,7 +175,7 @@ namespace daemonizer
     }
     else // interactive
     {
-      //LOG_PRINT_L0("Sumokoin '" << SUMOKOIN_RELEASE_NAME << "' (v" << SUMOKOIN_VERSION_FULL);
+      //LOG_PRINT_L0("Ryo '" << RYO_RELEASE_NAME << "' (v" << RYO_VERSION_FULL);
       return executor.run_interactive(vm);
     }
 

@@ -107,7 +107,7 @@ namespace wallet_args
         return boost::none;
       }
       // epee didn't find path to executable from argv[0], so use this default file name.
-      log_file_name = "sumo-wallet-cli.log";
+      log_file_name = "ryo-wallet-cli.log";
       // The full path will use cwd because epee also returned an empty default log folder.
     }
     default_log /= log_file_name;
@@ -116,7 +116,7 @@ namespace wallet_args
     command_line::add_arg(desc_params, arg_log_level);
     command_line::add_arg(desc_params, arg_max_concurrency);
 
-    i18n_set_language("translations", "sumokoin", lang);
+    i18n_set_language("translations", "ryo", lang);
 
     po::options_description desc_all;
     desc_all.add(desc_general).add(desc_params);
@@ -127,14 +127,14 @@ namespace wallet_args
 
       if (command_line::get_arg(vm, command_line::arg_help))
       {
-        tools::msg_writer() << "Sumokoin '" << SUMOKOIN_RELEASE_NAME << "' (v" << SUMOKOIN_VERSION_FULL << ")";
+        tools::msg_writer() << "Ryo '" << RYO_RELEASE_NAME << "' (v" << RYO_VERSION_FULL << ")";
         tools::msg_writer() << wallet_args::tr("Usage:") << ' ' << usage;
         tools::msg_writer() << desc_all;
         return false;
       }
       else if (command_line::get_arg(vm, command_line::arg_version))
       {
-        tools::msg_writer() << "Sumokoin '" << SUMOKOIN_RELEASE_NAME << "' (v" << SUMOKOIN_VERSION_FULL << ")";
+        tools::msg_writer() << "Ryo '" << RYO_RELEASE_NAME << "' (v" << RYO_VERSION_FULL << ")";
         return false;
       }
 
@@ -147,8 +147,8 @@ namespace wallet_args
       return boost::none;
 
     // log_file_path
-    //   default: < argv[0] directory >/sumo-wallet-cli.log
-    //     so if ran as "sumo-wallet-cli" (no path), log file will be in cwd
+    //   default: < argv[0] directory >/ryo-wallet-cli.log
+    //     so if ran as "ryo-wallet-cli" (no path), log file will be in cwd
     //
     //   if log-file argument given:
     //     absolute path
@@ -170,7 +170,7 @@ namespace wallet_args
     if(command_line::has_arg(vm, arg_max_concurrency))
       tools::set_max_concurrency(command_line::get_arg(vm, arg_max_concurrency));
 
-    tools::scoped_message_writer(epee::log_space::console_color_white, true) << "Sumokoin '" << SUMOKOIN_RELEASE_NAME << "' (v" << SUMOKOIN_VERSION_FULL << ")";
+    tools::scoped_message_writer(epee::log_space::console_color_white, true) << "Ryo '" << RYO_RELEASE_NAME << "' (v" << RYO_VERSION_FULL << ")";
 
     if(command_line::has_arg(vm, arg_log_level))
       log_level = command_line::get_arg(vm, arg_log_level);

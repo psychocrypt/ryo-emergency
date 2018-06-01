@@ -34,13 +34,13 @@ if (WIN32 OR STATIC)
   add_definitions(-DMINIUPNP_STATICLIB)
 endif ()
 
-function (sumokoin_private_headers group)
+function (ryo_private_headers group)
   source_group("${group}\\Private"
     FILES
       ${ARGN})
 endfunction ()
 
-function (sumokoin_install_headers subdir)
+function (ryo_install_headers subdir)
   install(
     FILES       ${ARGN}
     DESTINATION "include/${subdir}"
@@ -58,7 +58,7 @@ function (enable_stack_trace target)
   endif()
 endfunction()
 
-function (sumokoin_add_executable name)
+function (ryo_add_executable name)
   source_group("${name}"
     FILES
       ${ARGN})
@@ -77,7 +77,7 @@ function (sumokoin_add_executable name)
   enable_stack_trace("${name}")
 endfunction ()
 
-function (sumokoin_add_library name)
+function (ryo_add_library name)
   source_group("${name}"
     FILES
       ${ARGN})

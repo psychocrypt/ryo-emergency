@@ -2,7 +2,7 @@
 <!DOCTYPE TS>
 <TS version="2.0">
 <context>
-    <name>Sumokoin::PendingTransactionImpl</name>
+    <name>Ryo::PendingTransactionImpl</name>
     <message>
         <location filename="../src/wallet/api/pending_transaction.cpp" line="95"/>
         <source>daemon is busy. Please try again later.</source>
@@ -30,7 +30,7 @@
     </message>
 </context>
 <context>
-    <name>Sumokoin::WalletImpl</name>
+    <name>Ryo::WalletImpl</name>
     <message>
         <location filename="../src/wallet/api/wallet.cpp" line="609"/>
         <source>payment id has invalid format, expected 16 or 64 character hex string: </source>
@@ -145,7 +145,7 @@
     </message>
 </context>
 <context>
-    <name>Sumokoin::WalletManagerImpl</name>
+    <name>Ryo::WalletManagerImpl</name>
     <message>
         <location filename="../src/wallet/api/wallet_manager.cpp" line="161"/>
         <source>failed to parse txid</source>
@@ -497,12 +497,12 @@
     </message>
     <message>
         <location filename="../src/simplewallet/simplewallet.cpp" line="1991"/>
-        <source>failed to get a Sumokoin address from: </source>
+        <source>failed to get a Ryo address from: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/simplewallet/simplewallet.cpp" line="1997"/>
-        <source>not yet supported: Multiple Sumokoin addresses found for given URL: </source>
+        <source>not yet supported: Multiple Ryo addresses found for given URL: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1247,7 +1247,7 @@ Wallet file name (or Ctrl-C to quit): </source>
         <source>Your wallet has been generated!
 To start synchronizing with the daemon, use &quot;refresh&quot; command.
 Use &quot;help&quot; command to see the list of available commands.
-Always use &quot;exit&quot; command when closing Sumokoin-wallet-cli to save your
+Always use &quot;exit&quot; command when closing Ryo-wallet-cli to save your
 current session&apos;s state. Otherwise, you might need to synchronize 
 your wallet again (your wallet keys are NOT at risk in any case).
 </source>
@@ -1370,7 +1370,7 @@ your wallet again (your wallet keys are NOT at risk in any case).
     </message>
     <message>
         <location filename="../src/simplewallet/simplewallet.cpp" line="1972"/>
-        <source> Sumokoin Address = </source>
+        <source> Ryo Address = </source>
         <translation type="unfinished"></translation>
     </message>
     <message>

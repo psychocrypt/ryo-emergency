@@ -1,3 +1,4 @@
+// Copyright (c) 2018, Ryo-currency
 // Copyright (c) 2017, SUMOKOIN
 // Copyright (c) 2014-2017, The Monero Project
 // 
@@ -3229,18 +3230,18 @@ std::vector<std::vector<cryptonote::tx_destination_entry>> split_amounts(
 } // anonymous namespace
 
 /**
- * @brief gets a sumokoin address from the TXT record of a DNS entry
+ * @brief gets a ryo address from the TXT record of a DNS entry
  *
- * gets the sumokoin address from the TXT record of the DNS entry associated
+ * gets the ryo address from the TXT record of the DNS entry associated
  * with <url>.  If this lookup fails, or the TXT record does not contain an
- * SUMO address in the correct format, returns an empty string.  <dnssec_valid>
+ * SUMO/RYO address in the correct format, returns an empty string.  <dnssec_valid>
  * will be set true or false according to whether or not the DNS query passes
  * DNSSEC validation.
  *
  * @param url the url to look up
  * @param dnssec_valid return-by-reference for DNSSEC status of query
  *
- * @return a sumokoin address (as a string) or an empty string
+ * @return a ryo address (as a string) or an empty string
  */
 std::vector<std::string> wallet2::addresses_from_url(const std::string& url, bool& dnssec_valid)
 {
@@ -3257,7 +3258,7 @@ std::vector<std::string> wallet2::addresses_from_url(const std::string& url, boo
   }
   else dnssec_valid = false;
 
-  // for each txt record, try to find a sumokoin address in it.
+  // for each txt record, try to find a ryo address in it.
   for (auto& rec : records)
   {
     std::string addr = address_from_txt_record(rec);
@@ -5404,7 +5405,7 @@ std::string wallet2::make_uri(const std::string &address, const std::string &pay
     }
   }
 
-  std::string uri = "sumokoin:" + address;
+  std::string uri = "ryo:" + address;
   unsigned int n_fields = 0;
 
   if (!payment_id.empty())
@@ -5433,9 +5434,9 @@ std::string wallet2::make_uri(const std::string &address, const std::string &pay
 //----------------------------------------------------------------------------------------------------
 bool wallet2::parse_uri(const std::string &uri, std::string &address, std::string &payment_id, uint64_t &amount, std::string &tx_description, std::string &recipient_name, std::vector<std::string> &unknown_parameters, std::string &error)
 {
-  if (uri.substr(0, 7) != "sumokoin:")
+  if (uri.substr(0, 7) != "ryo:")
   {
-    error = std::string("URI has wrong scheme (expected \"sumokoin:\"): ") + uri;
+    error = std::string("URI has wrong scheme (expected \"ryo:\"): ") + uri;
     return false;
   }
 

@@ -63,9 +63,9 @@ set(crypto_private_headers
   skein_port.h
   cn_slow_hash.hpp)
 
-sumokoin_private_headers(crypto
+ryo_private_headers(crypto
   ${crypto_private_headers})
-sumokoin_add_library(crypto
+ryo_add_library(crypto
   ${crypto_sources}
   ${crypto_headers}
   ${crypto_private_headers})

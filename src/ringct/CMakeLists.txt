@@ -39,9 +39,9 @@ set(ringct_private_headers
   rctSigs.h
   rctTypes.h)
 
-sumokoin_private_headers(ringct
+ryo_private_headers(ringct
   ${crypto_private_headers})
-sumokoin_add_library(ringct
+ryo_add_library(ringct
   ${ringct_sources}
   ${ringct_headers}
   ${ringct_private_headers})

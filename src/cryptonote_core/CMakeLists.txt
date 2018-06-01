@@ -67,9 +67,9 @@ else()
   set(Blocks "")
 endif()
 
-sumokoin_private_headers(cryptonote_core
+ryo_private_headers(cryptonote_core
   ${crypto_private_headers})
-sumokoin_add_library(cryptonote_core
+ryo_add_library(cryptonote_core
   ${cryptonote_core_sources}
   ${cryptonote_core_headers}
   ${cryptonote_core_private_headers})

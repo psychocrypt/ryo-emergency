@@ -779,7 +779,7 @@ namespace cryptonote
       auto time_from_epoh = point.time_since_epoch();
       auto sec = duration_cast< seconds >( time_from_epoh ).count();*/
 
-    //epee::net_utils::network_throttle_manager::get_global_throttle_inreq().logger_handle_net("log/dr-sumokoin/net/req-all.data", sec, get_avg_block_size());
+    //epee::net_utils::network_throttle_manager::get_global_throttle_inreq().logger_handle_net("log/dr-ryo/net/req-all.data", sec, get_avg_block_size());
 
     if(context.m_last_response_height > arg.current_blockchain_height)
     {
@@ -956,7 +956,7 @@ namespace cryptonote
     //if (!m_one_request == false)
       //return true;
     m_one_request = false;
-    // save request size to log (dr sumokoin)
+    // save request size to log (dr ryo)
     /*using namespace boost::chrono;
       auto point = steady_clock::now();
       auto time_from_epoh = point.time_since_epoch();
@@ -983,7 +983,7 @@ namespace cryptonote
       }
       LOG_PRINT_CCONTEXT_L1("-->>NOTIFY_REQUEST_GET_OBJECTS: blocks.size()=" << req.blocks.size() << ", txs.size()=" << req.txs.size()
           << "requested blocks count=" << count << " / " << count_limit);
-      //epee::net_utils::network_throttle_manager::get_global_throttle_inreq().logger_handle_net("log/dr-sumokoin/net/req-all.data", sec, get_avg_block_size());
+      //epee::net_utils::network_throttle_manager::get_global_throttle_inreq().logger_handle_net("log/dr-ryo/net/req-all.data", sec, get_avg_block_size());
 
       post_notify<NOTIFY_REQUEST_GET_OBJECTS>(req, context);
     }else if(context.m_last_response_height < context.m_remote_blockchain_height-1)
@@ -995,7 +995,7 @@ namespace cryptonote
 
       //std::string blob; // for calculate size of request
       //epee::serialization::store_t_to_binary(r, blob);
-      //epee::net_utils::network_throttle_manager::get_global_throttle_inreq().logger_handle_net("log/dr-sumokoin/net/req-all.data", sec, get_avg_block_size());
+      //epee::net_utils::network_throttle_manager::get_global_throttle_inreq().logger_handle_net("log/dr-ryo/net/req-all.data", sec, get_avg_block_size());
       LOG_PRINT_CCONTEXT_L1("r = " << 200);
 
       LOG_PRINT_CCONTEXT_L1("-->>NOTIFY_REQUEST_CHAIN: m_block_ids.size()=" << r.block_ids.size() );
@@ -1025,7 +1025,7 @@ namespace cryptonote
     if(m_synchronized.compare_exchange_strong(val_expected, true))
     {
       LOG_PRINT_L0(ENDL << "**********************************************************************" << ENDL
-        << "You are now synchronized with the network. You may now start sumo-wallet-cli." << ENDL
+        << "You are now synchronized with the network. You may now start ryo-wallet-cli." << ENDL
         << ENDL
         << "Please note, that the blockchain will be saved only after you quit the daemon with \"exit\" command or if you use \"save\" command." << ENDL
         << "Otherwise, you will possibly need to synchronize the blockchain again." << ENDL

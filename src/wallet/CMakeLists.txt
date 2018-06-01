@@ -65,9 +65,9 @@ set(wallet_private_headers
   api/subaddress.h
   api/subaddress_account.h)
 
-sumokoin_private_headers(wallet
+ryo_private_headers(wallet
   ${wallet_private_headers})
-sumokoin_add_library(wallet
+ryo_add_library(wallet
   ${wallet_sources}
   ${wallet_api_headers}
   ${wallet_private_headers})
@@ -95,9 +95,9 @@ if (NOT BUILD_GUI_DEPS)
   set(wallet_rpc_private_headers
     wallet_rpc_server.h)
 
-  sumokoin_private_headers(wallet_rpc_server
+  ryo_private_headers(wallet_rpc_server
     ${wallet_rpc_private_headers})
-  sumokoin_add_executable(wallet_rpc_server
+  ryo_add_executable(wallet_rpc_server
     ${wallet_rpc_sources}
     ${wallet_rpc_headers}
     ${wallet_rpc_private_headers})
@@ -119,7 +119,7 @@ if (NOT BUILD_GUI_DEPS)
   add_dependencies(wallet_rpc_server version)
   set_property(TARGET wallet_rpc_server
     PROPERTY
-      OUTPUT_NAME "sumo-wallet-rpc")
+      OUTPUT_NAME "ryo-wallet-rpc")
   install(TARGETS wallet_rpc_server DESTINATION bin)
 endif()
 

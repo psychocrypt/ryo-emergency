@@ -1,3 +1,4 @@
+// Copyright (c) 2018, Ryo-currency
 // Copyright (c) 2017, SUMOKOIN
 // Copyright (c) 2014-2017, The Monero Project
 // 
@@ -119,7 +120,7 @@
 
 #define ALLOW_DEBUG_COMMANDS
 
-#define CRYPTONOTE_NAME                                 "sumokoin"
+#define CRYPTONOTE_NAME                                 "ryo"
 #define CRYPTONOTE_POOLDATA_FILENAME                    "poolstate.bin"
 #define CRYPTONOTE_BLOCKCHAINDATA_FILENAME              "blockchain.bin"
 #define CRYPTONOTE_BLOCKCHAINDATA_TEMP_FILENAME         "blockchain.bin.tmp"

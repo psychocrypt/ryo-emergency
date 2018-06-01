@@ -1,3 +1,4 @@
+// Copyright (c) 2018, Ryo-currency
 // Copyright (c) 2014-2016, The Monero Project
 // 
 // All rights reserved.
@@ -183,12 +184,12 @@ t_command_server::t_command_server(
     m_command_lookup.set_handler(
       "start_save_graph"
     , std::bind(&t_command_parser_executor::start_save_graph, &m_parser, p::_1)
-    , "Start save data for dr sumokoin"
+    , "Start save data for dr ryo"
     );
     m_command_lookup.set_handler(
       "stop_save_graph"
     , std::bind(&t_command_parser_executor::stop_save_graph, &m_parser, p::_1)
-    , "Stop save data for dr sumokoin"
+    , "Stop save data for dr ryo"
     );
     m_command_lookup.set_handler(
       "hard_fork_info"
@@ -267,7 +268,7 @@ bool t_command_server::help(const std::vector<std::string>& args)
 std::string t_command_server::get_commands_str()
 {
   std::stringstream ss;
-  ss << "Sumokoin '" << SUMOKOIN_RELEASE_NAME << "' (v" << SUMOKOIN_VERSION_FULL << ")" << std::endl;
+  ss << "Ryo '" << RYO_RELEASE_NAME << "' (v" << RYO_VERSION_FULL << ")" << std::endl;
   ss << "Commands: " << std::endl;
   std::string usage = m_command_lookup.get_usage();
   boost::replace_all(usage, "\n", "\n  ");

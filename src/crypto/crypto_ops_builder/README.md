@@ -1,6 +1,7 @@
-# Sumokoin
+# Ryo
 
-Copyright (c) 2016-2017, SUMOKOIN, (forked from) The Monero Project
+Copyright (c) 2018, Ryo-currency is forked from Sumikoin to support non ASIC friendly mining.
+SUMOKOIN was forked 2016-2017 from The Monero Project
 
 ## Crypto Ops Builder
 

@@ -124,10 +124,15 @@ namespace nodetool
     virtual std::map<uint32_t, time_t> get_blocked_ips() { CRITICAL_REGION_LOCAL(m_blocked_ips_lock); return m_blocked_ips; }
   private:
     const std::vector<std::string> m_seed_nodes_list =
-    { "seeds.sumoseeds.bid"
-    , "seeds.sumoseeds.win"
-    , "seeds.sumoseeds2.bid"
-    , "seeds.sumoseeds2.win"
+    {
+      "seed1.ryo-currency.com",
+      "seed2.ryo-currency.com",
+      "seed3.ryo-currency.com",
+      "testnet-seed.ryo-currency.com",
+      "seed1.ryo-currency.org",
+      "seed2.ryo-currency.org",
+      "seed3.ryo-currency.org",
+      "testnet-seed.ryo-currency.org"
     };
 
     bool islimitup=false;

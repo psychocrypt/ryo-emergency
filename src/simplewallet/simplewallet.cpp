@@ -1,3 +1,4 @@
+// Copyright (c) 2018, Ryo-currency
 // Copyright (c) 2017, SUMOKOIN
 // Copyright (c) 2014-2017, The Monero Project
 //
@@ -75,8 +76,8 @@ typedef cryptonote::simple_wallet sw;
 
 #define EXTENDED_LOGS_FILE "wallet_details.log"
 
-#define KEY_IMAGE_EXPORT_FILE_MAGIC "Sumokoin key image export\002"
-#define OUTPUT_EXPORT_FILE_MAGIC "Sumokoin output export\002"
+#define KEY_IMAGE_EXPORT_FILE_MAGIC "Ryo key image export\002"
+#define OUTPUT_EXPORT_FILE_MAGIC "Ryo output export\002"
 
 #define LOCK_IDLE_SCOPE() \
   bool auto_refresh_enabled = m_auto_refresh_enabled.load(std::memory_order_relaxed); \
@@ -1320,7 +1321,7 @@ bool simple_wallet::new_wallet(const boost::program_options::variables_map& vm,
     tr("Your wallet has been generated!\n"
     "To start synchronizing with the daemon, use \"refresh\" command.\n"
     "Use \"help\" command to see the list of available commands.\n"
-    "Always use \"exit\" command when closing sumo-wallet-cli to save your\n"
+    "Always use \"exit\" command when closing ryo-wallet-cli to save your\n"
     "current session's state. Otherwise, you might need to synchronize \n"
     "your wallet again (your wallet keys are NOT at risk in any case).\n")
   ;
@@ -2273,14 +2274,14 @@ bool simple_wallet::transfer_main(int transfer_type, const std::vector<std::stri
     // actually commit the transactions
     if (m_wallet->watch_only())
     {
-      bool r = m_wallet->save_tx(ptx_vector, "unsigned_sumokoin_tx");
+      bool r = m_wallet->save_tx(ptx_vector, "unsigned_ryo_tx");
       if (!r)
       {
         fail_msg_writer() << tr("Failed to write transaction(s) to file");
       }
       else
       {
-        success_msg_writer(true) << tr("Unsigned transaction(s) successfully written to file: ") << "unsigned_sumokoin_tx";
+        success_msg_writer(true) << tr("Unsigned transaction(s) successfully written to file: ") << "unsigned_ryo_tx";
       }
     }
     else while (!ptx_vector.empty())
@@ -2606,14 +2607,14 @@ bool simple_wallet::sweep_all(const std::vector<std::string> &args_, bool retry,
     // actually commit the transactions
     if (m_wallet->watch_only())
     {
-      bool r = m_wallet->save_tx(ptx_vector, "unsigned_sumokoin_tx");
+      bool r = m_wallet->save_tx(ptx_vector, "unsigned_ryo_tx");
       if (!r)
       {
         fail_msg_writer() << tr("Failed to write transaction(s) to file");
       }
       else
       {
-        success_msg_writer(true) << tr("Unsigned transaction(s) successfully written to file: ") << "unsigned_sumokoin_tx";
+        success_msg_writer(true) << tr("Unsigned transaction(s) successfully written to file: ") << "unsigned_ryo_tx";
       }
     }
     else while (!ptx_vector.empty())
@@ -2825,7 +2826,7 @@ bool simple_wallet::sign_transfer(const std::vector<std::string> &args_)
   std::vector<tools::wallet2::pending_tx> ptx;
   try
   {
-    bool r = m_wallet->sign_tx("unsigned_sumokoin_tx", "signed_sumokoin_tx", ptx, [&](const tools::wallet2::unsigned_tx_set &tx){ return accept_loaded_tx(tx); });
+    bool r = m_wallet->sign_tx("unsigned_ryo_tx", "signed_ryo_tx", ptx, [&](const tools::wallet2::unsigned_tx_set &tx){ return accept_loaded_tx(tx); });
     if (!r)
     {
       fail_msg_writer() << tr("Failed to sign transaction");
@@ -2845,7 +2846,7 @@ bool simple_wallet::sign_transfer(const std::vector<std::string> &args_)
       txids_as_text += (", ");
     txids_as_text += epee::string_tools::pod_to_hex(get_transaction_hash(t.tx));
   }
-  success_msg_writer(true) << tr("Transaction successfully signed to file ") << "signed_sumokoin_tx" << ", txid " << txids_as_text;
+  success_msg_writer(true) << tr("Transaction successfully signed to file ") << "signed_ryo_tx" << ", txid " << txids_as_text;
   return true;
 }
 //----------------------------------------------------------------------------------------------------
@@ -2857,7 +2858,7 @@ bool simple_wallet::submit_transfer(const std::vector<std::string> &args_)
   try
   {
     std::vector<tools::wallet2::pending_tx> ptx_vector;
-    bool r = m_wallet->load_tx("signed_sumokoin_tx", ptx_vector, [&](const tools::wallet2::signed_tx_set &tx){ return accept_loaded_tx(tx); });
+    bool r = m_wallet->load_tx("signed_ryo_tx", ptx_vector, [&](const tools::wallet2::signed_tx_set &tx){ return accept_loaded_tx(tx); });
     if (!r)
     {
       fail_msg_writer() << tr("Failed to load transaction from file");
@@ -4153,7 +4154,7 @@ int main(int argc, char* argv[])
 
   const auto vm = wallet_args::main(
    argc, argv,
-   "sumo-wallet-cli [--wallet-file=<file>|--generate-new-wallet=<file>] [<COMMAND>]",
+   "ryo-wallet-cli [--wallet-file=<file>|--generate-new-wallet=<file>] [<COMMAND>]",
     desc_params,
     positional_options
   );

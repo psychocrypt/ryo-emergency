@@ -1,3 +1,4 @@
+// Copyright (c) 2018, Ryo-currency
 // Copyright (c) 2014-2017, The Monero Project
 //
 // All rights reserved.
@@ -115,7 +116,7 @@ void TransactionHistoryImpl::refresh()
     // - payment_details              - input transfers
 
     // payments are "input transactions";
-    // one input transaction contains only one transfer. e.g. <transaction_id> - <100SUMO>
+    // one input transaction contains only one transfer. e.g. <transaction_id> - <100RYO>
 
     std::list<std::pair<crypto::hash, tools::wallet2::payment_details>> in_payments;
     m_wallet->m_wallet->get_payments(in_payments, min_height, max_height);
@@ -148,8 +149,8 @@ void TransactionHistoryImpl::refresh()
     // confirmed output transactions
     // one output transaction may contain more than one money transfer, e.g.
     // <transaction_id>:
-    //    transfer1: 100SUMO to <address_1>
-    //    transfer2: 50SUMO  to <address_2>
+    //    transfer1: 100ROY to <address_1>
+    //    transfer2: 50RYO  to <address_2>
     //    fee: fee charged per transaction
     //
 

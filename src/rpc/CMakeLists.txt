@@ -36,9 +36,9 @@ set(rpc_private_headers
   core_rpc_server_commands_defs.h
   core_rpc_server_error_codes.h)
 
-sumokoin_private_headers(rpc
+ryo_private_headers(rpc
   ${rpc_private_headers})
-sumokoin_add_library(rpc
+ryo_add_library(rpc
   ${rpc_sources}
   ${rpc_headers}
   ${rpc_private_headers})

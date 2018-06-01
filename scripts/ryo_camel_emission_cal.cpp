@@ -1,4 +1,4 @@
-// Sumokoin Block Reward Emission
+// Ryo Block Reward Emission
 // Short URL: http://cpp.sh/6eeyr
 
 #include <iostream>

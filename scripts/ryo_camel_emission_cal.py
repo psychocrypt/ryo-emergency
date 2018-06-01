@@ -64,7 +64,7 @@ def calculate_emssion_speed(print_by_year = False):
     f.write(format(height, '07') + "\t" + '{0:.8f}'.format(block_reward/1000000000.0) + "\t" + str(coins_already_generated/1000000000.0) + "\t" + '{0:.2f}'.format(round(coins_already_generated*100.0/MONEY_SUPPLY, 2)) + "\t" + format(int(total_time/(60*60*24.0)), '04') + "\t" + str(round(total_time/(60*60*24)/365.25, 2)) + "\n")
     
 if __name__ == "__main__":
-    f = open("sumokoin_camel_emmission.txt", "w")
+    f = open("ryo_camel_emmission.txt", "w")
     calculate_emssion_speed()
     if COIN_EMISSION_MONTH_INTERVAL == 6:
         print "\n\n\n"

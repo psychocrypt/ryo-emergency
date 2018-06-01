@@ -117,16 +117,16 @@ int main(int argc, char const * argv[])
 
     if (command_line::get_arg(vm, command_line::arg_help))
     {
-      std::cout << "Sumokoin '" << SUMOKOIN_RELEASE_NAME << "' (v" << SUMOKOIN_VERSION_FULL << ")" << ENDL << ENDL;
+      std::cout << "Ryo '" << RYO_RELEASE_NAME << "' (v" << RYO_VERSION_FULL << ")" << ENDL << ENDL;
       std::cout << "Usage: " + std::string{argv[0]} + " [options|settings] [daemon_command...]" << std::endl << std::endl;
       std::cout << visible_options << std::endl;
       return 0;
     }
 
-    // Sumokoin Version
+    // Ryo Version
     if (command_line::get_arg(vm, command_line::arg_version))
     {
-      std::cout << "Sumokoin '" << SUMOKOIN_RELEASE_NAME << "' (v" << SUMOKOIN_VERSION_FULL << ")" << ENDL;
+      std::cout << "Ryo '" << RYO_RELEASE_NAME << "' (v" << RYO_VERSION_FULL << ")" << ENDL;
       return 0;
     }
 
@@ -157,7 +157,7 @@ int main(int argc, char const * argv[])
     auto data_dir_arg = testnet_mode ? command_line::arg_testnet_data_dir : command_line::arg_data_dir;
 
     // data_dir
-    //   default: e.g. ~/.sumokoin/ or ~/.sumokoin/testnet
+    //   default: e.g. ~/.ryo/ or ~/.ryo/testnet
     //   if data-dir argument given:
     //     absolute path
     //     relative path: relative to cwd
@@ -282,7 +282,7 @@ int main(int argc, char const * argv[])
       tools::set_max_concurrency(command_line::get_arg(vm, daemon_args::arg_max_concurrency));
 
     // logging is now set up
-    LOG_PRINT_L0("Sumokoin '" << SUMOKOIN_RELEASE_NAME << "' (v" << SUMOKOIN_VERSION_FULL << ")");
+    LOG_PRINT_L0("Ryo '" << RYO_RELEASE_NAME << "' (v" << RYO_VERSION_FULL << ")");
 
     _note_c("dbg/main", "Moving from main() into the daemonize now.");
 
