@@ -110,6 +110,10 @@
 #define P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT            5000       //5 seconds
 #define P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT       70
 
+// bool: 'false' means dns checkpoints will only loaded from json if available
+//       'true' try to use code internal checkpoints
+#define CHECK_DNS_CHECKPOINTS                           false
+
 #define P2P_FAILED_ADDR_FORGET_SECONDS                  (60*60)     //1 hour
 #define P2P_IP_BLOCKTIME                                (60*60*24)  //24 hour
 #define P2P_IP_FAILS_BEFORE_BLOCK                       10

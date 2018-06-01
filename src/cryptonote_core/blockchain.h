@@ -680,7 +680,7 @@ namespace cryptonote
      *
      * @return false if any enforced checkpoint type fails to load, otherwise true
      */
-    bool update_checkpoints(const std::string& file_path, bool check_dns);
+    bool update_checkpoints(const std::string& file_path, bool check_dns = CHECK_DNS_CHECKPOINTS);
 
 
     // user options, must be called before calling init()
